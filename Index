@@ -1,0 +1,1048 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Planning Sportif – Corbas 2026–2027</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bleu:#003F8A;--bleu2:#1565C0;--bleu3:#1E88E5;--accent:#FF6B00;--accent2:#FFB300;--blanc:#fff;--gris:#F4F7FB;--texte:#0D1B2A;--texte2:#4A5568;--vert:#2E7D32;--rouge:#C62828;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{font-family:'Outfit',sans-serif;background:#001E50;color:#fff;min-height:100vh;overflow-x:hidden;}
+.page{display:none;}.page.active{display:block;}
+.hero{min-height:100vh;background:linear-gradient(135deg,#001230 0%,#003F8A 50%,#0D5EA8 100%);position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;padding:40px 20px;}
+.hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23fff' fill-opacity='0.025'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E");pointer-events:none;}
+.orb{position:absolute;border-radius:50%;pointer-events:none;}
+.orb1{width:500px;height:500px;top:-150px;right:-150px;background:radial-gradient(circle,rgba(30,136,229,.15),transparent 70%);animation:pulse 8s ease-in-out infinite;}
+.orb2{width:350px;height:350px;bottom:-80px;left:-80px;background:radial-gradient(circle,rgba(255,107,0,.1),transparent 70%);animation:pulse 8s ease-in-out 3s infinite;}
+@keyframes pulse{0%,100%{transform:scale(1);}50%{transform:scale(1.08);}}
+.badge{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:50px;padding:8px 22px 8px 10px;margin-bottom:30px;backdrop-filter:blur(8px);animation:fadeDown .8s ease both;}
+@keyframes fadeDown{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+.badge span{font-size:13px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.8);}
+.hero-titre{font-family:'Bebas Neue',sans-serif;font-size:clamp(54px,10vw,108px);line-height:.92;text-align:center;letter-spacing:2px;animation:fadeUp .9s ease .2s both;position:relative;z-index:1;}
+.hero-titre em{color:var(--accent);font-style:normal;}
+.hero-sub{font-size:17px;color:rgba(255,255,255,.65);margin:18px 0 48px;text-align:center;max-width:500px;line-height:1.6;animation:fadeUp .9s ease .4s both;}
+.cards-row{display:flex;gap:22px;flex-wrap:wrap;justify-content:center;animation:fadeUp .9s ease .6s both;position:relative;z-index:1;}
+.login-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:20px;padding:34px 28px;width:270px;text-align:center;cursor:pointer;transition:transform .3s,background .3s,border-color .3s;backdrop-filter:blur(10px);}
+.login-card:hover{transform:translateY(-6px);background:rgba(255,255,255,.13);border-color:rgba(255,255,255,.32);}
+.login-card .ci{font-size:44px;margin-bottom:14px;display:block;}
+.login-card h2{font-size:19px;font-weight:600;margin-bottom:8px;}
+.login-card p{font-size:13px;color:rgba(255,255,255,.6);line-height:1.5;margin-bottom:22px;}
+.btn-cx{display:inline-block;padding:11px 26px;border-radius:50px;font-size:14px;font-weight:600;cursor:pointer;border:none;font-family:'Outfit',sans-serif;transition:transform .2s,box-shadow .2s;}
+.btn-cx:hover{transform:scale(1.05);box-shadow:0 6px 18px rgba(0,0,0,.3);}
+.btn-asso{background:#fff;color:var(--bleu);}.btn-admin{background:var(--accent);color:#fff;}
+.sport-deco{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);display:flex;gap:16px;opacity:.18;font-size:24px;animation:fadeUp 1s ease 1s both;}
+.modal-overlay{display:none;position:fixed;inset:0;z-index:200;background:rgba(0,5,20,.8);backdrop-filter:blur(6px);align-items:center;justify-content:center;}
+.modal-overlay.open{display:flex;}
+.modal{background:#fff;color:var(--texte);border-radius:22px;padding:38px 34px;width:100%;max-width:420px;position:relative;animation:popIn .35s cubic-bezier(.34,1.56,.64,1) both;box-shadow:0 30px 80px rgba(0,0,0,.4);}
+@keyframes popIn{from{transform:scale(.85) translateY(30px);opacity:0}to{transform:scale(1) translateY(0);opacity:1}}
+.modal-x{position:absolute;top:13px;right:17px;background:none;border:none;font-size:20px;cursor:pointer;color:#718096;line-height:1;}
+.modal h3{font-size:20px;font-weight:700;margin-bottom:6px;color:var(--bleu);}
+.modal .mi{font-size:40px;margin-bottom:14px;display:block;}
+.modal p{font-size:13px;color:var(--texte2);margin-bottom:20px;line-height:1.5;}
+.inp-code{width:100%;padding:13px 16px;border:2px solid #E2E8F0;border-radius:10px;font-size:20px;font-family:'Outfit',sans-serif;font-weight:700;letter-spacing:6px;text-align:center;outline:none;transition:border .2s;color:var(--texte);}
+.inp-code:focus{border-color:var(--bleu3);}
+.inp-txt{width:100%;padding:12px 14px;border:2px solid #E2E8F0;border-radius:10px;font-size:15px;font-family:'Outfit',sans-serif;outline:none;color:var(--texte);margin-bottom:10px;transition:border .2s;}
+.inp-txt:focus{border-color:var(--bleu3);}
+.btn-v{width:100%;margin-top:14px;padding:13px;border-radius:10px;border:none;font-size:15px;font-weight:600;font-family:'Outfit',sans-serif;cursor:pointer;transition:opacity .2s;}
+.btn-v:hover{opacity:.88;}
+.bv-blue{background:var(--bleu);color:#fff;}.bv-orange{background:var(--accent);color:#fff;}.bv-red{background:#C62828;color:#fff;}
+.err{color:#C62828;font-size:12px;margin-top:8px;text-align:center;display:none;}
+.confirm-box{background:#fff;color:var(--texte);border-radius:18px;padding:32px 28px;width:100%;max-width:380px;text-align:center;animation:popIn .3s cubic-bezier(.34,1.56,.64,1) both;box-shadow:0 20px 60px rgba(0,0,0,.4);}
+.confirm-box h3{font-size:18px;font-weight:700;color:#C62828;margin-bottom:10px;}
+.confirm-box p{font-size:13.5px;color:#4A5568;line-height:1.6;margin-bottom:24px;}
+.confirm-btns{display:flex;gap:12px;justify-content:center;}
+.confirm-btns button{padding:10px 24px;border-radius:10px;font-size:14px;font-weight:600;border:none;cursor:pointer;font-family:'Outfit',sans-serif;}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:11px 24px;position:sticky;top:0;z-index:50;flex-wrap:wrap;gap:8px;}
+.topbar.blue{background:var(--bleu);}.topbar.dark{background:#0A1628;border-bottom:1px solid rgba(255,255,255,.08);}
+.topbar.light{background:#fff;border-bottom:1px solid #E2E8F0;color:var(--texte);}
+.topbar h1{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1px;}
+.topbar.light h1{color:var(--bleu);}
+.btn-back{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:#fff;padding:6px 16px;border-radius:50px;font-size:12px;cursor:pointer;font-family:'Outfit',sans-serif;transition:background .2s;}
+.btn-back:hover{background:rgba(255,255,255,.22);}
+.btn-back-light{background:var(--gris);border:1px solid #E2E8F0;color:var(--texte);padding:6px 16px;border-radius:50px;font-size:12px;cursor:pointer;font-family:'Outfit',sans-serif;}
+.planning-shell{display:flex;flex-direction:column;height:calc(100vh - 52px);}
+.tabs-zone{flex-shrink:0;position:relative;}.table-zone{flex:1;overflow:auto;}
+.tabs-wrapper{position:relative;background:#0A1628;padding:10px 44px 0;}
+.tabs-bar{display:flex;overflow-x:hidden;gap:3px;scrollbar-width:none;transition:scroll .2s;}
+.tabs-bar::-webkit-scrollbar{display:none;}
+.tabs-bar .tab{flex-shrink:0;padding:7px 13px;border-radius:7px 7px 0 0;font-size:12px;font-weight:600;cursor:pointer;border:none;font-family:'Outfit',sans-serif;background:rgba(255,255,255,.07);color:rgba(255,255,255,.5);transition:background .2s,color .2s;white-space:nowrap;}
+.tabs-bar .tab:hover{background:rgba(255,255,255,.13);color:#fff;}
+.tabs-bar .tab.active{background:var(--bleu);color:#fff;}
+.tabs-bar .tab.act-tab{background:rgba(255,107,0,.12);color:rgba(255,165,0,.7);}
+.tabs-bar .tab.act-tab:hover{background:rgba(255,107,0,.22);color:rgba(255,165,0,.95);}
+.tabs-bar .tab.act-tab.active{background:var(--accent);color:#fff;}
+.tabs-bar .tab.bilan-tab{background:rgba(46,125,50,.12);color:rgba(100,200,100,.7);}
+.tabs-bar .tab.bilan-tab.active{background:#2E7D32;color:#fff;}
+.tabs-bar .sep{width:1px;background:rgba(255,255,255,.12);margin:4px 6px 0;flex-shrink:0;}
+.tabs-bar .lbl{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.3);padding:0 4px;align-self:flex-end;margin-bottom:3px;flex-shrink:0;}
+.tab-arrow{position:absolute;top:50%;transform:translateY(-50%);background:rgba(10,22,40,.95);border:1px solid rgba(255,255,255,.15);color:#fff;width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;z-index:10;transition:background .2s;user-select:none;}
+.tab-arrow:hover{background:var(--bleu);}
+.tab-arrow-left{left:4px;}.tab-arrow-right{right:4px;}
+.tab-add-btn{flex-shrink:0;padding:5px 10px;border-radius:7px 7px 0 0;font-size:18px;font-weight:700;cursor:pointer;border:1px dashed rgba(255,255,255,.25);background:transparent;color:rgba(255,255,255,.4);font-family:'Outfit',sans-serif;transition:all .2s;align-self:flex-end;margin-bottom:0;}
+.tab-add-btn:hover{background:rgba(255,255,255,.1);color:#fff;border-color:rgba(255,255,255,.5);}
+.mois-header{padding:10px 16px;background:#0D1F38;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;flex-shrink:0;}
+.mois-header h2{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:1px;}
+.an-badge{background:var(--accent);color:#fff;padding:3px 12px;border-radius:50px;font-size:12px;font-weight:700;}
+.macro-btns{display:flex;gap:6px;flex-wrap:wrap;}
+.mbtn{padding:7px 13px;border-radius:7px;font-size:11px;font-weight:700;border:none;cursor:pointer;font-family:'Outfit',sans-serif;transition:opacity .2s,transform .15s;}
+.mbtn:hover{opacity:.85;transform:translateY(-1px);}
+.mb-o{background:#E65100;color:#fff;}.mb-b{background:var(--bleu3);color:#fff;}.mb-g{background:#2E7D32;color:#fff;}.mb-p{background:#6A1B9A;color:#fff;}.mb-r{background:#C62828;color:#fff;}
+.lock-bar{background:rgba(198,40,40,.12);border-bottom:1px solid rgba(198,40,40,.3);padding:8px 16px;font-size:12px;color:rgba(255,130,130,.9);display:flex;align-items:center;gap:8px;}
+.sync-bar{background:rgba(30,136,229,.1);border-bottom:1px solid rgba(30,136,229,.2);padding:6px 16px;font-size:11px;color:rgba(100,180,255,.8);display:flex;align-items:center;gap:8px;}
+table.tm{width:100%;border-collapse:collapse;min-width:700px;font-size:12px;}
+table.tm thead th{background:#0D1F38;color:rgba(255,255,255,.65);padding:8px 8px;text-align:left;border-bottom:2px solid rgba(255,255,255,.15);border-right:1px solid rgba(255,255,255,.12);white-space:nowrap;font-size:10px;text-transform:uppercase;letter-spacing:.06em;position:sticky;top:0;z-index:5;}
+table.tm thead th:last-child{border-right:none;}
+table.tm tbody tr{border-bottom:1px solid rgba(255,255,255,.07);}
+table.tm tbody tr.sc>td{border-top:2px solid rgba(30,136,229,.4)!important;}
+table.tm tbody td{padding:0;color:rgba(255,255,255,.85);vertical-align:top;border-right:1px solid rgba(255,255,255,.1);}
+table.tm tbody td:last-child{border-right:none;}
+table.tm tbody tr.sem-even td{background:rgba(255,255,255,.03);}
+table.tm tbody tr.sem-odd td{background:rgba(255,255,255,.07);}
+table.tm tbody tr.sem-even:hover td{background:rgba(30,136,229,.09);}
+table.tm tbody tr.sem-odd:hover td{background:rgba(30,136,229,.14);}
+td.csem{font-weight:800;color:#42A5F5;font-size:11px;width:80px;min-width:80px;text-align:center;padding:4px 3px!important;vertical-align:middle!important;border-right:2px solid rgba(30,136,229,.4)!important;}
+td.cdeb,td.cfin{text-align:center;width:42px;color:#FFB300;font-size:11px;}
+td.cdur{text-align:center;width:36px;color:rgba(255,255,255,.4);font-size:10px;}
+td.cdate{text-align:center;width:72px;font-size:10px;color:rgba(255,255,255,.4);padding:5px 4px!important;}
+.ei{background:transparent;border:none;color:rgba(255,255,255,.88);font-family:'Outfit',sans-serif;font-size:12px;width:100%;padding:5px 7px;outline:none;transition:background .15s;resize:none;display:block;box-sizing:border-box;}
+.ei:hover{background:rgba(255,255,255,.06);}
+.ei:focus{background:rgba(255,255,255,.1);box-shadow:inset 0 0 0 1.5px rgba(30,136,229,.5);}
+.ei.ro{pointer-events:none;opacity:.6;}
+.ei.admin-only{pointer-events:none;opacity:.5;cursor:not-allowed;}
+textarea.ei{overflow:hidden;min-height:28px;line-height:1.4;}
+tr.trow td{border-top:2px solid rgba(30,136,229,.25)!important;padding:7px 8px!important;}
+table.ta{width:100%;border-collapse:collapse;min-width:700px;font-size:12.5px;}
+table.ta thead th{background:#0D1F38;color:rgba(255,255,255,.65);padding:9px 10px;text-align:left;border-bottom:2px solid rgba(255,255,255,.08);white-space:nowrap;font-size:11px;text-transform:uppercase;letter-spacing:.06em;position:sticky;top:0;z-index:5;}
+table.ta tbody tr{border-bottom:1px solid rgba(255,255,255,.04);}
+table.ta tbody tr:hover{background:rgba(255,255,255,.03);}
+table.ta tbody td{padding:8px 10px;color:rgba(255,255,255,.85);vertical-align:middle;}
+table.ta tr.mr td{background:rgba(30,136,229,.1);color:#64B5F6;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;padding:5px 10px;}
+table.ta tr.tr-tot td{background:rgba(255,107,0,.08);color:#FFB300;font-size:11px;font-weight:700;}
+.aei{background:transparent;border:none;color:rgba(255,255,255,.88);font-family:'Outfit',sans-serif;font-size:12.5px;width:100%;padding:4px 6px;border-radius:5px;outline:none;transition:background .15s;resize:none;display:block;box-sizing:border-box;}
+.aei:hover{background:rgba(255,255,255,.05);}
+.aei:focus{background:rgba(255,255,255,.09);box-shadow:0 0 0 1.5px rgba(30,136,229,.5);}
+.aei.ro{pointer-events:none;opacity:.6;}
+textarea.aei{overflow:hidden;min-height:26px;line-height:1.4;}
+.bilan-bg{min-height:100vh;background:var(--gris);color:var(--texte);}
+.bilan-wrap{max-width:900px;margin:0 auto;padding:36px 24px;}
+.bilan-wrap h2{font-size:22px;font-weight:700;color:var(--bleu);margin-bottom:4px;}
+.bcards{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin:18px 0 24px;}
+.bc{background:#fff;border-radius:12px;padding:16px;border:1px solid #E2E8F0;text-align:center;}
+.bc .n{font-size:26px;font-weight:700;color:var(--bleu);}
+.bc .l{font-size:10.5px;color:var(--texte2);text-transform:uppercase;letter-spacing:.05em;margin-top:2px;}
+table.tb{width:100%;border-collapse:collapse;font-size:13px;}
+table.tb thead th{background:var(--bleu);color:#fff;padding:10px 12px;text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.05em;}
+table.tb tbody tr:nth-child(even){background:#f0f4fb;}
+table.tb tbody tr:hover{background:#dce8f8;}
+table.tb tbody td{padding:8px 12px;border-bottom:1px solid #E2E8F0;}
+.nr{text-align:right;font-weight:600;color:var(--bleu);}
+.notetd{font-size:11px;color:#718096;font-style:italic;}
+.admin-bg{min-height:100vh;background:var(--gris);color:var(--texte);}
+.admin-inner{max-width:900px;margin:0 auto;padding:44px 24px;}
+.admin-inner h2{font-size:22px;font-weight:700;color:var(--bleu);margin-bottom:5px;}
+.admin-inner .st{color:var(--texte2);margin-bottom:36px;font-size:14px;}
+.agrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px;}
+.acard{background:#fff;border-radius:16px;padding:26px 20px;border:1px solid #E2E8F0;cursor:pointer;transition:transform .2s,box-shadow .2s,border-color .2s;text-align:center;}
+.acard:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(0,63,138,.1);border-color:var(--bleu3);}
+.acard .ai{font-size:38px;margin-bottom:12px;}
+.acard h3{font-size:15px;font-weight:700;margin-bottom:6px;color:var(--texte);}
+.acard p{font-size:12px;color:var(--texte2);line-height:1.55;margin-bottom:14px;}
+.abtn{display:inline-block;padding:7px 18px;border-radius:50px;font-size:12px;font-weight:600;border:none;cursor:pointer;font-family:'Outfit',sans-serif;}
+.ab-b{background:var(--bleu);color:#fff;}.ab-o{background:var(--accent);color:#fff;}.ab-g{background:#2E7D32;color:#fff;}.ab-r{background:#C62828;color:#fff;}.ab-p{background:#6A1B9A;color:#fff;}.ab-t{background:#00695C;color:#fff;}
+.extract-bg{min-height:100vh;background:var(--gris);color:var(--texte);}
+.extract-wrap{max-width:820px;margin:0 auto;padding:44px 24px;}
+.extract-wrap h2{font-size:22px;font-weight:700;color:var(--bleu);margin-bottom:6px;}
+.extract-section{background:#fff;border-radius:16px;padding:24px;border:1px solid #E2E8F0;margin-bottom:20px;}
+.extract-section h3{font-size:16px;font-weight:700;color:var(--bleu);margin-bottom:16px;}
+.extract-btns{display:flex;flex-wrap:wrap;gap:10px;}
+.ebtn{padding:9px 18px;border-radius:9px;font-size:13px;font-weight:600;border:none;cursor:pointer;font-family:'Outfit',sans-serif;background:var(--bleu);color:#fff;transition:opacity .2s,transform .2s;display:flex;align-items:center;gap:6px;}
+.ebtn:hover{opacity:.85;transform:translateY(-1px);}
+.ebtn.green{background:#2E7D32;}.ebtn.orange{background:var(--accent);}
+.wrap{max-width:620px;margin:0 auto;padding:44px 24px;}
+.wrap h2{font-size:21px;font-weight:700;color:var(--bleu);margin-bottom:5px;}
+.wrap .st{color:var(--texte2);margin-bottom:26px;font-size:13.5px;}
+.sb{border-radius:10px;padding:12px 18px;font-size:13px;font-weight:600;margin-bottom:22px;display:flex;align-items:center;gap:10px;}
+.sb-open{background:#F0FFF4;color:#276749;border:1px solid #9AE6B4;}
+.sb-lock{background:#FFF5F5;color:#9B2C2C;border:1px solid #FEB2B2;}
+.vcard{background:#fff;border-radius:14px;padding:20px 18px;border:1px solid #E2E8F0;margin-bottom:12px;display:flex;align-items:center;gap:16px;}
+.vcard .vi{font-size:32px;flex-shrink:0;}
+.vcard h3{font-size:14px;font-weight:700;margin-bottom:3px;}
+.vcard p{font-size:12px;color:var(--texte2);line-height:1.5;}
+.vcard button{margin-left:auto;flex-shrink:0;padding:8px 16px;border-radius:9px;font-family:'Outfit',sans-serif;font-size:12px;font-weight:600;border:none;cursor:pointer;transition:opacity .2s;}
+.fg{background:#fff;border-radius:12px;padding:18px;border:1px solid #E2E8F0;margin-bottom:14px;}
+.fg label{display:block;font-size:11px;font-weight:700;color:var(--texte2);margin-bottom:5px;text-transform:uppercase;letter-spacing:.05em;}
+.fg input{width:100%;padding:10px 12px;border:2px solid #E2E8F0;border-radius:9px;font-size:15px;font-family:'Outfit',sans-serif;outline:none;color:var(--texte);transition:border .2s;}
+.fg input:focus{border-color:var(--bleu3);}
+.save-btn{padding:10px 26px;background:var(--bleu);color:#fff;border:none;border-radius:9px;font-size:13.5px;font-weight:600;font-family:'Outfit',sans-serif;cursor:pointer;}
+.save-btn:hover{opacity:.88;}
+.mf{font-size:12px;margin-bottom:10px;display:none;}
+.dark-bg{background:#0A1628;color:#fff;min-height:100vh;}
+.db-status{position:fixed;bottom:16px;right:16px;padding:8px 14px;border-radius:50px;font-size:11px;font-weight:600;z-index:100;display:flex;align-items:center;gap:6px;backdrop-filter:blur(8px);}
+.db-ok{background:rgba(46,125,50,.85);color:#fff;}
+.db-local{background:rgba(180,100,0,.85);color:#fff;}
+.db-err{background:rgba(198,40,40,.85);color:#fff;}
+.toast{position:fixed;bottom:54px;left:50%;transform:translateX(-50%) translateY(70px);background:#1A202C;color:#fff;padding:10px 22px;border-radius:50px;font-size:13px;font-weight:500;z-index:999;transition:transform .4s cubic-bezier(.34,1.56,.64,1);pointer-events:none;white-space:nowrap;}
+.toast.show{transform:translateX(-50%) translateY(0);}
+@media(max-width:600px){.login-card{width:100%;max-width:300px;}.vcard{flex-direction:column;text-align:center;}.vcard button{margin-left:0;}}
+</style>
+</head>
+<body>
+
+<!-- ACCUEIL -->
+<div id="pg-accueil" class="page active">
+<section class="hero">
+  <div class="orb orb1"></div><div class="orb orb2"></div>
+  <div class="badge">
+    <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="16" fill="#0050A0"/><path d="M16 6L23 12V26H19V20H13V26H9V12Z" fill="white"/><circle cx="16" cy="11" r="2.5" fill="#FF6B00"/></svg>
+    <span>Ville de Corbas — Sport</span>
+  </div>
+  <h1 class="hero-titre">Planning<br><em>Sportif</em><br>Corbas</h1>
+  <p class="hero-sub">Saison 2026–2027 · Gérez et consultez les manifestations sportives de la ville</p>
+  <div class="cards-row">
+    <div class="login-card" onclick="openModal('asso')">
+      <span class="ci">🏆</span><h2>Vous êtes une association</h2>
+      <p>Accédez au planning et saisissez vos données dans les onglets mensuels.</p>
+      <button class="btn-cx btn-asso">Entrer le code d'accès</button>
+    </div>
+    <div class="login-card" onclick="openModal('admin')">
+      <span class="ci">🔐</span><h2>Vous êtes administrateur</h2>
+      <p>Accès complet : planning, macros, verrouillage, paramètres.</p>
+      <button class="btn-cx btn-admin">Entrer le code d'accès</button>
+    </div>
+  </div>
+  <div class="sport-deco">⚽ 🏀 🏐 🎾 🏸 🥊 🏊 🎯 🤼 🏋️</div>
+</section>
+</div>
+
+<!-- PLANNING ASSO -->
+<div id="pg-asso" class="page">
+<div class="dark-bg">
+  <div class="topbar dark"><h1>📋 Planning Sportif Corbas 2026–2027</h1><button class="btn-back" onclick="go('pg-accueil')">← Déconnexion</button></div>
+  <div id="asso-lock-bar" class="lock-bar" style="display:none;">🔒 Planning verrouillé — consultation uniquement.</div>
+  <div class="sync-bar" id="sync-bar-asso">🔄 Connexion base de données...</div>
+  <div class="planning-shell">
+    <div class="tabs-zone" id="asso-tabs-zone"></div>
+    <div class="table-zone" id="asso-content"></div>
+  </div>
+</div>
+</div>
+
+<!-- PLANNING ADMIN -->
+<div id="pg-admin-planning" class="page">
+<div class="dark-bg">
+  <div class="topbar dark"><h1>📋 Planning — Administrateur</h1><button class="btn-back" onclick="go('pg-admin')">← Retour admin</button></div>
+  <div class="sync-bar" id="sync-bar-admin">🔄 Connexion base de données...</div>
+  <div class="planning-shell">
+    <div class="tabs-zone" id="admin-tabs-zone"></div>
+    <div class="table-zone" id="admin-content"></div>
+  </div>
+</div>
+</div>
+
+<!-- ADMIN HOME -->
+<div id="pg-admin" class="page">
+<div class="admin-bg">
+  <div class="topbar blue"><h1>🔐 Espace Administrateur</h1><button class="btn-back" onclick="go('pg-accueil')">← Déconnexion</button></div>
+  <div class="admin-inner">
+    <h2>Que souhaitez-vous faire ?</h2>
+    <p class="st">Accès complet à toutes les fonctionnalités du planning sportif.</p>
+    <div class="agrid">
+      <div class="acard" onclick="ouvrirPlanningAdmin()"><div class="ai">📝</div><h3>Modifier le planning</h3><p>Tous les onglets, toutes les cellules.</p><button class="abtn ab-b">Ouvrir</button></div>
+      <div class="acard" onclick="go('pg-bilan')"><div class="ai">📊</div><h3>Bilan</h3><p>Synthèse des impacts par association.</p><button class="abtn ab-t">Voir</button></div>
+      <div class="acard" onclick="go('pg-extraction')"><div class="ai">📥</div><h3>Extraction de données</h3><p>Télécharger planning par mois, activité ou bilan.</p><button class="abtn ab-g">Extraire</button></div>
+      <div class="acard" onclick="go('pg-verrou')"><div class="ai">🔒</div><h3>Verrouiller / Déverrouiller</h3><p>Contrôler l'accès des associations.</p><button class="abtn ab-o">Gérer</button></div>
+      <div class="acard" onclick="go('pg-mdp-asso')"><div class="ai">🔑</div><h3>Code association</h3><p>Modifier le mot de passe des associations.</p><button class="abtn ab-g">Changer</button></div>
+      <div class="acard" onclick="go('pg-mdp-admin')"><div class="ai">🛡️</div><h3>Code administrateur</h3><p>Modifier votre propre code d'accès.</p><button class="abtn ab-p">Changer</button></div>
+      <div class="acard" onclick="go('pg-settings')"><div class="ai">⚙️</div><h3>Année de la saison</h3><p>Modifier l'année met à jour tout le planning.</p><button class="abtn ab-b">Paramètres</button></div>
+      <div class="acard" onclick="confirmReset()"><div class="ai">🗑️</div><h3>Remettre à zéro</h3><p>Effacer toutes les données saisies. Action irréversible.</p><button class="abtn ab-r">Remettre à zéro</button></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- BILAN -->
+<div id="pg-bilan" class="page">
+<div class="bilan-bg">
+  <div class="topbar light"><h1>📊 Bilan — <span id="bilan-titre">2026–2027</span></h1><button class="btn-back-light" onclick="go('pg-admin')">← Retour</button></div>
+  <div class="bilan-wrap">
+    <h2>Bilan saison <span id="bilan-an">2026–2027</span></h2>
+    <p style="color:var(--texte2);font-size:13px;margin-bottom:10px;">Calculé automatiquement.</p>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px;">
+      <button class="mbtn mb-o" onclick="macroBilan()">📊 Bilan en heures</button>
+      <button class="mbtn mb-b" onclick="macroCreneaux()">🔄 Répartition créneaux</button>
+      <button class="mbtn mb-g" onclick="macroHeures()">🕐 Répartition heures</button>
+    </div>
+    <div class="bcards" id="bilan-cards"></div>
+    <div style="overflow-x:auto;">
+      <table class="tb"><thead><tr>
+        <th>Association</th><th style="text-align:right">Organisation</th>
+        <th style="text-align:right">Clubs impactés</th><th style="text-align:right">Total</th>
+        <th style="text-align:right">Heures</th><th>Note</th>
+      </tr></thead><tbody id="bilan-tbody"></tbody></table>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- EXTRACTION -->
+<div id="pg-extraction" class="page">
+<div class="extract-bg">
+  <div class="topbar light"><h1>📥 Extraction de données</h1><button class="btn-back-light" onclick="go('pg-admin')">← Retour</button></div>
+  <div class="extract-wrap">
+    <h2>Télécharger les données</h2>
+    <p style="color:var(--texte2);font-size:13px;margin-bottom:28px;">Choisissez ce que vous souhaitez exporter. Le fichier sera téléchargé au format CSV compatible LibreOffice Calc.</p>
+    <div class="extract-section"><h3>📅 Par mois</h3><div class="extract-btns" id="extract-mois-btns"></div></div>
+    <div class="extract-section"><h3>🏅 Par activité</h3><div class="extract-btns" id="extract-act-btns"></div></div>
+    <div class="extract-section"><h3>📊 Bilan global</h3><div class="extract-btns"><button class="ebtn green" onclick="exportBilan()">⬇️ Télécharger le bilan</button></div></div>
+  </div>
+</div>
+</div>
+
+<!-- VERROU -->
+<div id="pg-verrou" class="page">
+<div class="admin-bg">
+  <div class="topbar blue"><h1>🔒 Verrouillage</h1><button class="btn-back" onclick="go('pg-admin')">← Retour</button></div>
+  <div class="wrap">
+    <h2>Accès des associations</h2><p class="st">Choisissez si les associations peuvent modifier les onglets mensuels.</p>
+    <div id="verrou-sb" class="sb sb-open"><span>🟢</span><span id="verrou-txt">Modification autorisée.</span></div>
+    <div class="vcard"><div class="vi">🔒</div><div><h3>Verrouiller</h3><p>Les associations passent en lecture seule.</p></div><button onclick="verrouiller()" style="background:#C62828;color:#fff;">Verrouiller</button></div>
+    <div class="vcard"><div class="vi">🔓</div><div><h3>Déverrouiller</h3><p>Les associations retrouvent l'accès en modification.</p></div><button onclick="deverrouiller()" style="background:#2E7D32;color:#fff;">Déverrouiller</button></div>
+  </div>
+</div>
+</div>
+
+<!-- MDP ASSO -->
+<div id="pg-mdp-asso" class="page">
+<div class="admin-bg">
+  <div class="topbar blue"><h1>🔑 Code Association</h1><button class="btn-back" onclick="go('pg-admin')">← Retour</button></div>
+  <div class="wrap">
+    <h2>Modifier le code association</h2><p class="st">Code utilisé par les associations pour se connecter.</p>
+    <div class="fg"><label>Nouveau code</label><input type="password" id="na1" class="inp-txt" placeholder="Nouveau code…"></div>
+    <div class="fg"><label>Confirmer</label><input type="password" id="na2" class="inp-txt" placeholder="Confirmer…"></div>
+    <p id="msg-na" class="mf"></p><button class="save-btn" onclick="changerMdp('asso')">Enregistrer</button>
+  </div>
+</div>
+</div>
+
+<!-- MDP ADMIN -->
+<div id="pg-mdp-admin" class="page">
+<div class="admin-bg">
+  <div class="topbar blue"><h1>🛡️ Code Administrateur</h1><button class="btn-back" onclick="go('pg-admin')">← Retour</button></div>
+  <div class="wrap">
+    <h2>Modifier le code administrateur</h2><p class="st">Votre code d'accès personnel.</p>
+    <div class="fg"><label>Nouveau code</label><input type="password" id="nadm1" class="inp-txt" placeholder="Nouveau code…"></div>
+    <div class="fg"><label>Confirmer</label><input type="password" id="nadm2" class="inp-txt" placeholder="Confirmer…"></div>
+    <p id="msg-nadm" class="mf"></p><button class="save-btn" onclick="changerMdp('admin')">Enregistrer</button>
+  </div>
+</div>
+</div>
+
+<!-- SETTINGS -->
+<div id="pg-settings" class="page">
+<div class="admin-bg">
+  <div class="topbar blue"><h1>⚙️ Paramètres</h1><button class="btn-back" onclick="go('pg-admin')">← Retour</button></div>
+  <div class="wrap">
+    <h2>Année de la saison</h2><p class="st">Modifier l'année met à jour les en-têtes.</p>
+    <div class="fg"><label>Année de début</label><input type="number" id="inp-an" min="2020" max="2060" value="2026"></div>
+    <p style="font-size:13px;color:var(--texte2);margin-bottom:16px;">Saison : <strong id="prev-saison">2026–2027</strong></p>
+    <button class="save-btn" onclick="changerAnnee()">Mettre à jour</button>
+  </div>
+</div>
+</div>
+
+<!-- MODALES LOGIN -->
+<div id="modal-asso" class="modal-overlay">
+  <div class="modal">
+    <button class="modal-x" onclick="closeModal('asso')">✕</button>
+    <span class="mi">🏆</span><h3>Accès Association</h3>
+    <p>Entrez votre code pour accéder au planning de Corbas.</p>
+    <input type="password" id="code-asso" class="inp-code" placeholder="••••••" maxlength="30" onkeydown="if(event.key==='Enter')valAsso()">
+    <button class="btn-v bv-blue" onclick="valAsso()">Accéder au planning</button>
+    <p class="err" id="err-asso">❌ Code incorrect.</p>
+  </div>
+</div>
+<div id="modal-admin" class="modal-overlay">
+  <div class="modal">
+    <button class="modal-x" onclick="closeModal('admin')">✕</button>
+    <span class="mi">🔐</span><h3>Accès Administrateur</h3>
+    <p>Entrez votre code administrateur.</p>
+    <input type="password" id="code-admin" class="inp-code" placeholder="••••••" maxlength="30" onkeydown="if(event.key==='Enter')valAdmin()">
+    <button class="btn-v bv-orange" onclick="valAdmin()">Accéder à l'espace admin</button>
+    <p class="err" id="err-admin">❌ Code incorrect.</p>
+  </div>
+</div>
+<div id="modal-confirm" class="modal-overlay">
+  <div class="confirm-box">
+    <h3 id="confirm-title">⚠️ Confirmation</h3>
+    <p id="confirm-msg">Êtes-vous sûr ?</p>
+    <div class="confirm-btns">
+      <button style="background:#E2E8F0;color:#4A5568;" onclick="closeConfirm()">Annuler</button>
+      <button id="confirm-ok-btn" style="background:#C62828;color:#fff;">Confirmer</button>
+    </div>
+  </div>
+</div>
+<div id="modal-new-act" class="modal-overlay">
+  <div class="modal">
+    <button class="modal-x" onclick="closeModal('new-act')">✕</button>
+    <span class="mi">➕</span><h3>Nouvelle activité</h3>
+    <p>Entrez le nom de la nouvelle association / activité à ajouter.</p>
+    <input type="text" id="new-act-name" class="inp-txt" placeholder="Ex: Judo, Tennis, Danse…" maxlength="30">
+    <p class="err" id="err-new-act">❌ Ce nom existe déjà ou est vide.</p>
+    <button class="btn-v bv-blue" onclick="confirmerNouvelleAct()">✓ Créer l'onglet</button>
+  </div>
+</div>
+
+<div id="db-status" class="db-status db-local">🔄 Connexion...</div>
+<div id="toast" class="toast"></div>
+
+<script>
+const SUPABASE_URL = 'https://nvufzwdwhearlwdcezsn.supabase.co';
+const SUPABASE_KEY = 'sb_publishable_Ts29xuGykGP-xQ7R5ldKYg_J8Ywxnwl';
+// Identifiant unique de cet onglet/navigateur : permet d'ignorer ses propres mises à jour temps réel
+const CLIENT_ID = Math.random().toString(36).slice(2) + Date.now().toString(36);
+let supabaseClient = null;
+let useDB = false;
+let pendingRemote = false; // une mise à jour distante attend que l'utilisateur finisse de taper
+
+async function initSupabase(){
+  try {
+    const { createClient } = await import('https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm');
+    supabaseClient = createClient(SUPABASE_URL, SUPABASE_KEY);
+    const { error } = await supabaseClient.from('planning').select('id').limit(1);
+    if(error) throw error;
+    useDB = true; setDBStatus('ok'); await loadFromDB();
+    subscribeRealtime();
+  } catch(e){ console.warn('Supabase erreur:', e.message); setDBStatus('err'); }
+}
+
+// ===== TEMPS RÉEL : reçoit les modifications des autres utilisateurs =====
+function subscribeRealtime(){
+  supabaseClient.channel('planning-realtime')
+    .on('postgres_changes',
+      { event:'*', schema:'public', table:'planning', filter:'id=eq.main' },
+      (p)=>{ if(p.new && p.new.payload) applyRemote(p.new.payload); })
+    .subscribe((status)=>{ if(status==='SUBSCRIBED') setDBStatus('live'); });
+}
+
+function applyRemote(d){
+  if(!d || d._client === CLIENT_ID) return; // ignorer nos propres sauvegardes
+  if(d.mois) S.mois=d.mois; if(d.act) S.act=d.act; if(d.acts_list) S.acts_list=d.acts_list;
+  if(d.verrou!==undefined) S.verrou=d.verrou; if(d.annee) S.annee=d.annee;
+  if(d.mdpAsso) S.mdpAsso=d.mdpAsso; if(d.mdpAdmin) S.mdpAdmin=d.mdpAdmin;
+  saveLocal();
+  // Si l'utilisateur est en train de taper dans une cellule, on n'interrompt pas :
+  // les données sont à jour en mémoire, le rafraîchissement visuel attendra la fin de saisie
+  const ae=document.activeElement;
+  const editing = ae && (ae.tagName==='TEXTAREA'||ae.tagName==='INPUT') && (ae.classList.contains('ei')||ae.classList.contains('aei'));
+  if(editing){ pendingRemote=true; return; }
+  refreshCurrentView(true);
+}
+
+// Quand l'utilisateur quitte une cellule, applique la mise à jour distante en attente
+document.addEventListener('focusout',()=>{ setTimeout(()=>{
+  if(!pendingRemote) return;
+  const ae=document.activeElement;
+  const editing = ae && (ae.tagName==='TEXTAREA'||ae.tagName==='INPUT') && (ae.classList.contains('ei')||ae.classList.contains('aei'));
+  if(!editing){ pendingRemote=false; refreshCurrentView(true); }
+},200); });
+
+function refreshCurrentView(notify){
+  if(document.getElementById('pg-asso').classList.contains('active')){
+    document.getElementById('asso-lock-bar').style.display=S.verrou?'flex':'none';
+    rebuildTabsKeep('asso-tabs-zone','asso-content',false);
+  }
+  if(document.getElementById('pg-admin-planning').classList.contains('active')){
+    rebuildTabsKeep('admin-tabs-zone','admin-content',true);
+  }
+  if(document.getElementById('pg-bilan').classList.contains('active')) renderBilan();
+  if(document.getElementById('pg-verrou').classList.contains('active')) majVerrou();
+  if(notify) toast('🔄 Mise à jour reçue d\'un autre utilisateur');
+}
+
+// Reconstruit les onglets en conservant l'onglet actuellement sélectionné
+function rebuildTabsKeep(zoneId,cid,isAdmin){
+  const keep=currentIdx;
+  buildTabs(zoneId,cid,isAdmin);
+  const bar=document.getElementById('tabs-bar-'+zoneId);
+  if(!bar) return;
+  const tabs=bar.querySelectorAll('.tab');
+  const idx=Math.min(keep,tabs.length-1);
+  if(idx>0 && tabs[idx]){
+    tabs.forEach(t=>t.classList.remove('active'));
+    tabs[idx].classList.add('active');
+    currentIdx=idx;
+    renderTab(cid,idx,isAdmin);
+  }
+}
+
+function setDBStatus(s){
+  const el=document.getElementById('db-status');
+  if(s==='live'){el.className='db-status db-ok';el.textContent='🟢 Synchro temps réel active';}
+  else if(s==='ok'){el.className='db-status db-ok';el.textContent='🟢 Base de données partagée';}
+  else if(s==='local'){el.className='db-status db-local';el.textContent='💾 Stockage local';}
+  else{el.className='db-status db-err';el.textContent='🔴 Erreur BDD — mode local';}
+  const shared=(s==='ok'||s==='live');
+  const msg=s==='live'?'🟢 Temps réel actif — les modifications des autres apparaissent automatiquement'
+    :(s==='ok'?'🟢 Données partagées — visibles par tous':'⚠️ Mode local — données non partagées');
+  ['asso','admin'].forEach(t=>{const b=document.getElementById('sync-bar-'+t);if(b){b.textContent=msg;b.style.background=shared?'rgba(46,125,50,.15)':'rgba(180,100,0,.12)';}});
+}
+
+async function loadFromDB(){
+  if(!useDB) return;
+  try {
+    const {data,error}=await supabaseClient.from('planning').select('*').eq('id','main').single();
+    if(error||!data) return;
+    const d=data.payload;
+    if(d.mois) S.mois=d.mois; if(d.act) S.act=d.act; if(d.acts_list) S.acts_list=d.acts_list;
+    if(d.verrou!==undefined) S.verrou=d.verrou; if(d.annee) S.annee=d.annee;
+    if(d.mdpAsso) S.mdpAsso=d.mdpAsso; if(d.mdpAdmin) S.mdpAdmin=d.mdpAdmin;
+    saveLocal();
+    toast('✅ Données chargées depuis la base partagée !');
+  } catch(e){ console.warn('loadFromDB error:',e); }
+}
+
+async function saveToDB(){
+  if(!useDB){saveLocal();return;}
+  saveLocal();
+  try {
+    const{error}=await supabaseClient.from('planning').upsert({
+      id:'main',
+      payload:{mois:S.mois,act:S.act,acts_list:S.acts_list,verrou:S.verrou,annee:S.annee,mdpAsso:S.mdpAsso,mdpAdmin:S.mdpAdmin,_client:CLIENT_ID},
+      updated_at:new Date().toISOString()
+    });
+    if(error) throw error;
+  } catch(e){ console.warn('saveToDB error:',e); setDBStatus('err'); }
+}
+
+function saveLocal(){
+  try{
+    localStorage.setItem('mois_data',JSON.stringify(S.mois));
+    localStorage.setItem('act_data',JSON.stringify(S.act));
+    localStorage.setItem('acts_list',JSON.stringify(S.acts_list));
+    localStorage.setItem('verrou',S.verrou);
+    localStorage.setItem('annee',S.annee);
+    localStorage.setItem('mdp_asso',S.mdpAsso);
+    localStorage.setItem('mdp_admin',S.mdpAdmin);
+  }catch(e){}
+}
+function saveM(){saveToDB();}
+function saveA(){saveToDB();}
+function saveS(){saveToDB();}
+
+const ODS = {"Septembre":{"an":2026,"num":9,"rows":[{"sem":"S1","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mardi","num":1,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mercredi","num":2,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"jeudi","num":3,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"vendredi","num":4,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"samedi","num":5,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"dimanche","num":6,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"lundi","num":7,"deb":"","fin":"","dur":"0"},{"sem":"S2","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mardi","num":8,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mercredi","num":9,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"jeudi","num":10,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"vendredi","num":11,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"samedi","num":12,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"dimanche","num":13,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"lundi","num":14,"deb":"","fin":"","dur":"0"},{"sem":"S3","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mardi","num":15,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mercredi","num":16,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"jeudi","num":17,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"vendredi","num":18,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"samedi","num":19,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"dimanche","num":20,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"lundi","num":21,"deb":"","fin":"","dur":"0"},{"sem":"S4","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mardi","num":22,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mercredi","num":23,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"jeudi","num":24,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"vendredi","num":25,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"samedi","num":26,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"dimanche","num":27,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"lundi","num":28,"deb":"","fin":"","dur":"0"},{"sem":"S5","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mardi","num":29,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mercredi","num":30,"deb":"","fin":"","dur":"0"}]},"Octobre":{"an":2026,"num":10,"rows":[{"sem":"S1","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"jeudi","num":1,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"vendredi","num":2,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"samedi","num":3,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"dimanche","num":4,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"lundi","num":5,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mardi","num":6,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mercredi","num":7,"deb":"","fin":"","dur":"0"},{"sem":"S2","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"jeudi","num":8,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"vendredi","num":9,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"samedi","num":10,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"dimanche","num":11,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"lundi","num":12,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mardi","num":13,"deb":"","fin":"","dur":"0"},{"sem":"S3","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mercredi","num":14,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"jeudi","num":15,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"vendredi","num":16,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"samedi","num":17,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"dimanche","num":18,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"lundi","num":19,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mardi","num":20,"deb":"","fin":"","dur":"0"},{"sem":"S4","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mercredi","num":21,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"jeudi","num":22,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"vendredi","num":23,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"samedi","num":24,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"dimanche","num":25,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"lundi","num":26,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mardi","num":27,"deb":"","fin":"","dur":"0"},{"sem":"S5","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mercredi","num":28,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"jeudi","num":29,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"vendredi","num":30,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"samedi","num":31,"deb":"","fin":"","dur":"0"}]},"Novembre":{"an":2026,"num":11,"rows":[{"sem":"S1","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"dimanche","num":1,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"lundi","num":2,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mardi","num":3,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mercredi","num":4,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"jeudi","num":5,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"vendredi","num":6,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"samedi","num":7,"deb":"","fin":"","dur":"0"},{"sem":"S2","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"dimanche","num":8,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"lundi","num":9,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mardi","num":10,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mercredi","num":11,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"jeudi","num":12,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"vendredi","num":13,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"samedi","num":14,"deb":"","fin":"","dur":"0"},{"sem":"S3","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"dimanche","num":15,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"lundi","num":16,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mardi","num":17,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mercredi","num":18,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"jeudi","num":19,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"vendredi","num":20,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"samedi","num":21,"deb":"","fin":"","dur":"0"},{"sem":"S4","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"dimanche","num":22,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"lundi","num":23,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mardi","num":24,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mercredi","num":25,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"jeudi","num":26,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"vendredi","num":27,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"samedi","num":28,"deb":"","fin":"","dur":"0"},{"sem":"S5","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"dimanche","num":29,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"lundi","num":30,"deb":"","fin":"","dur":"0"}]},"Décembre":{"an":2026,"num":12,"rows":[{"sem":"S1","org":"Comité des fêtes","manif":"Marché de Noël – Sam 5 et Dim 6 déc – Gymnase Jean Jaurès","ddate":"2026-05-27","trait":"","rem":"Samedi dès 8h grande salle et dimanche 8h–23h","clubs":"","jour":"mardi","num":1,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mercredi","num":2,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"jeudi","num":3,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"vendredi","num":4,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"samedi","num":5,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"dimanche","num":6,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"lundi","num":7,"deb":"","fin":"","dur":"0"},{"sem":"S2","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mardi","num":8,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mercredi","num":9,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"jeudi","num":10,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"vendredi","num":11,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"samedi","num":12,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"dimanche","num":13,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"lundi","num":14,"deb":"","fin":"","dur":"0"},{"sem":"S3","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mardi","num":15,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mercredi","num":16,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"jeudi","num":17,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"vendredi","num":18,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"samedi","num":19,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"dimanche","num":20,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"lundi","num":21,"deb":"","fin":"","dur":"0"},{"sem":"S4","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mardi","num":22,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mercredi","num":23,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"jeudi","num":24,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"vendredi","num":25,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"samedi","num":26,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"dimanche","num":27,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"lundi","num":28,"deb":"","fin":"","dur":"0"},{"sem":"S5","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mardi","num":29,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mercredi","num":30,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"jeudi","num":31,"deb":"","fin":"","dur":"0"}]},"Janvier":{"an":2027,"num":1,"rows":[{"sem":"S1","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"vendredi","num":1,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"samedi","num":2,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"dimanche","num":3,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"lundi","num":4,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mardi","num":5,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mercredi","num":6,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"jeudi","num":7,"deb":"","fin":"","dur":"0"},{"sem":"S2","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"vendredi","num":8,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"samedi","num":9,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"dimanche","num":10,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"lundi","num":11,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mardi","num":12,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mercredi","num":13,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"jeudi","num":14,"deb":"","fin":"","dur":"0"},{"sem":"S3","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"vendredi","num":15,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"samedi","num":16,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"dimanche","num":17,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"lundi","num":18,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mardi","num":19,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mercredi","num":20,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"jeudi","num":21,"deb":"","fin":"","dur":"0"},{"sem":"S4","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"vendredi","num":22,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"samedi","num":23,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"dimanche","num":24,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"lundi","num":25,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mardi","num":26,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mercredi","num":27,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"jeudi","num":28,"deb":"","fin":"","dur":"0"},{"sem":"S5","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"vendredi","num":29,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"samedi","num":30,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"dimanche","num":31,"deb":"","fin":"","dur":"0"}]},"Février":{"an":2027,"num":2,"rows":[{"sem":"S1","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"lundi","num":1,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mardi","num":2,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mercredi","num":3,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"jeudi","num":4,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"vendredi","num":5,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"samedi","num":6,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"dimanche","num":7,"deb":"","fin":"","dur":"0"},{"sem":"S2","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"lundi","num":8,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mardi","num":9,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mercredi","num":10,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"jeudi","num":11,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"vendredi","num":12,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"samedi","num":13,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"dimanche","num":14,"deb":"","fin":"","dur":"0"},{"sem":"S3","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"lundi","num":15,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mardi","num":16,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mercredi","num":17,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"jeudi","num":18,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"vendredi","num":19,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"samedi","num":20,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"dimanche","num":21,"deb":"","fin":"","dur":"0"},{"sem":"S4","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"lundi","num":22,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mardi","num":23,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mercredi","num":24,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"jeudi","num":25,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"vendredi","num":26,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"samedi","num":27,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"dimanche","num":28,"deb":"","fin":"","dur":"0"}]},"Mars":{"an":2027,"num":3,"rows":[{"sem":"S1","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"lundi","num":1,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mardi","num":2,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mercredi","num":3,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"jeudi","num":4,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"vendredi","num":5,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"samedi","num":6,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"dimanche","num":7,"deb":"","fin":"","dur":"0"},{"sem":"S2","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"lundi","num":8,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mardi","num":9,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mercredi","num":10,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"jeudi","num":11,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"vendredi","num":12,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"samedi","num":13,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"dimanche","num":14,"deb":"","fin":"","dur":"0"},{"sem":"S3","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"lundi","num":15,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mardi","num":16,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mercredi","num":17,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"jeudi","num":18,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"vendredi","num":19,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"samedi","num":20,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"dimanche","num":21,"deb":"","fin":"","dur":"0"},{"sem":"S4","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"lundi","num":22,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mardi","num":23,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mercredi","num":24,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"jeudi","num":25,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"vendredi","num":26,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"samedi","num":27,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"dimanche","num":28,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"lundi","num":29,"deb":"","fin":"","dur":"0"},{"sem":"S5","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mardi","num":30,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mercredi","num":31,"deb":"","fin":"","dur":"0"}]},"Avril":{"an":2027,"num":4,"rows":[{"sem":"S1","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"jeudi","num":1,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"vendredi","num":2,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"samedi","num":3,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"dimanche","num":4,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"lundi","num":5,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mardi","num":6,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mercredi","num":7,"deb":"","fin":"","dur":"0"},{"sem":"S2","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"jeudi","num":8,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"vendredi","num":9,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"samedi","num":10,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"dimanche","num":11,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"lundi","num":12,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mardi","num":13,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mercredi","num":14,"deb":"","fin":"","dur":"0"},{"sem":"S3","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"jeudi","num":15,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"vendredi","num":16,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"samedi","num":17,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"dimanche","num":18,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"lundi","num":19,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mardi","num":20,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mercredi","num":21,"deb":"","fin":"","dur":"0"},{"sem":"S4","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"jeudi","num":22,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"vendredi","num":23,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"samedi","num":24,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"dimanche","num":25,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"lundi","num":26,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mardi","num":27,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mercredi","num":28,"deb":"","fin":"","dur":"0"},{"sem":"S5","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"jeudi","num":29,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"vendredi","num":30,"deb":"","fin":"","dur":"0"}]},"Mai":{"an":2027,"num":5,"rows":[{"sem":"S1","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"samedi","num":1,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"dimanche","num":2,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"lundi","num":3,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mardi","num":4,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mercredi","num":5,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"jeudi","num":6,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"vendredi","num":7,"deb":"","fin":"","dur":"0"},{"sem":"S2","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"samedi","num":8,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"dimanche","num":9,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"lundi","num":10,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mardi","num":11,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mercredi","num":12,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"jeudi","num":13,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"vendredi","num":14,"deb":"","fin":"","dur":"0"},{"sem":"S3","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"samedi","num":15,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"dimanche","num":16,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"lundi","num":17,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mardi","num":18,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mercredi","num":19,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"jeudi","num":20,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"vendredi","num":21,"deb":"","fin":"","dur":"0"},{"sem":"S4","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"samedi","num":22,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"dimanche","num":23,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"lundi","num":24,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mardi","num":25,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mercredi","num":26,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"jeudi","num":27,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"vendredi","num":28,"deb":"","fin":"","dur":"0"},{"sem":"S5","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"samedi","num":29,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"dimanche","num":30,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"lundi","num":31,"deb":"","fin":"","dur":"0"}]},"Juin":{"an":2027,"num":6,"rows":[{"sem":"S1","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mardi","num":1,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mercredi","num":2,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"jeudi","num":3,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"vendredi","num":4,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"samedi","num":5,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"dimanche","num":6,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"lundi","num":7,"deb":"","fin":"","dur":"0"},{"sem":"S2","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mardi","num":8,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mercredi","num":9,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"jeudi","num":10,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"vendredi","num":11,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"samedi","num":12,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"dimanche","num":13,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"lundi","num":14,"deb":"","fin":"","dur":"0"},{"sem":"S3","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mardi","num":15,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mercredi","num":16,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"jeudi","num":17,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"vendredi","num":18,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"samedi","num":19,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"dimanche","num":20,"deb":"","fin":"","dur":"0"},{"sem":"S4","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"lundi","num":21,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mardi","num":22,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mercredi","num":23,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"jeudi","num":24,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"vendredi","num":25,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"samedi","num":26,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"dimanche","num":27,"deb":"","fin":"","dur":"0"},{"sem":"S5","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"lundi","num":28,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mardi","num":29,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mercredi","num":30,"deb":"","fin":"","dur":"0"}]},"Juillet":{"an":2027,"num":7,"rows":[{"sem":"S1","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"jeudi","num":1,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"vendredi","num":2,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"samedi","num":3,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"dimanche","num":4,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"lundi","num":5,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mardi","num":6,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mercredi","num":7,"deb":"","fin":"","dur":"0"},{"sem":"S2","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"jeudi","num":8,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"vendredi","num":9,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"samedi","num":10,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"dimanche","num":11,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"lundi","num":12,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mardi","num":13,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mercredi","num":14,"deb":"","fin":"","dur":"0"},{"sem":"S3","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"jeudi","num":15,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"vendredi","num":16,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"samedi","num":17,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"dimanche","num":18,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"lundi","num":19,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mardi","num":20,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mercredi","num":21,"deb":"","fin":"","dur":"0"},{"sem":"S4","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"jeudi","num":22,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"vendredi","num":23,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"samedi","num":24,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"dimanche","num":25,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"lundi","num":26,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mardi","num":27,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mercredi","num":28,"deb":"","fin":"","dur":"0"},{"sem":"S5","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"jeudi","num":29,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"vendredi","num":30,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"samedi","num":31,"deb":"","fin":"","dur":"0"}]},"Aout":{"an":2027,"num":8,"rows":[{"sem":"S1","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"dimanche","num":1,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"lundi","num":2,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mardi","num":3,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mercredi","num":4,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"jeudi","num":5,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"vendredi","num":6,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"samedi","num":7,"deb":"","fin":"","dur":"0"},{"sem":"S2","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"dimanche","num":8,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"lundi","num":9,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mardi","num":10,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mercredi","num":11,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"jeudi","num":12,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"vendredi","num":13,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"samedi","num":14,"deb":"","fin":"","dur":"0"},{"sem":"S3","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"dimanche","num":15,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"lundi","num":16,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mardi","num":17,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mercredi","num":18,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"jeudi","num":19,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"vendredi","num":20,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"samedi","num":21,"deb":"","fin":"","dur":"0"},{"sem":"S4","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"dimanche","num":22,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"lundi","num":23,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mardi","num":24,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mercredi","num":25,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"jeudi","num":26,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"vendredi","num":27,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"samedi","num":28,"deb":"","fin":"","dur":"0"},{"sem":"S5","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"dimanche","num":29,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"lundi","num":30,"deb":"","fin":"","dur":"0"},{"sem":"","org":"","manif":"","ddate":"","trait":"","rem":"","clubs":"","jour":"mardi","num":31,"deb":"","fin":"","dur":"0"}]}};
+
+const MOIS=['Septembre','Octobre','Novembre','Décembre','Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Aout'];
+const ACTS_DEFAULT=['Handball','GV','Badminton','Escrime','Full','Escalade','Volley','TT','Gym','Boxe','Squash','Archers','Foot','GR','Basket','Karaté','Judo','Tennis','Boule','Petanque','Echecs','AMCR','Ultimate','VTT','Velo','Running','PAJ','Périscolaire','EMS','EPS','VILLE','IME','CTM','UNSS'];
+const NOTES={'Escalade':'Impacts sans annulation','GR':"Uniquement J.Jaurès samedi — bientôt plus d'impact (nouvelle salle)"};
+
+let S={
+  mdpAsso:localStorage.getItem('mdp_asso')||'Corbas',
+  mdpAdmin:localStorage.getItem('mdp_admin')||'Corbas',
+  verrou:localStorage.getItem('verrou')==='true',
+  annee:parseInt(localStorage.getItem('annee')||'2026'),
+  mois:JSON.parse(localStorage.getItem('mois_data')||'null'),
+  act:JSON.parse(localStorage.getItem('act_data')||'null'),
+  acts_list:JSON.parse(localStorage.getItem('acts_list')||'null'),
+};
+if(!S.acts_list) S.acts_list=[...ACTS_DEFAULT];
+if(!S.mois){ S.mois=JSON.parse(JSON.stringify(ODS)); }
+if(!S.act){ initAct(); }
+
+function initAct(){ S.act={}; S.acts_list.forEach(a=>{if(!S.act[a])S.act[a]=[];}); }
+function todayStr(){ const d=new Date(); return d.getDate().toString().padStart(2,'0')+'/'+(d.getMonth()+1).toString().padStart(2,'0')+'/'+d.getFullYear(); }
+
+function go(id){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo(0,0);
+  if(id==='pg-verrou') majVerrou();
+  if(id==='pg-bilan') renderBilan();
+  if(id==='pg-extraction') buildExtractionBtns();
+  if(id==='pg-settings'){document.getElementById('inp-an').value=S.annee;majSaison();}
+}
+function openModal(t){
+  document.getElementById('modal-'+t).classList.add('open');
+  const err=document.getElementById('err-'+t);
+  if(err) err.style.display='none';
+  const inp=document.getElementById('code-'+t)||document.getElementById('new-act-name');
+  if(inp){inp.value='';setTimeout(()=>inp.focus(),80);}
+}
+function closeModal(t){document.getElementById('modal-'+t).classList.remove('open');}
+document.querySelectorAll('.modal-overlay').forEach(o=>o.addEventListener('click',function(e){if(e.target===this)this.classList.remove('open');}));
+
+let confirmCallback=null;
+function showConfirm(title,msg,cb){
+  document.getElementById('confirm-title').textContent=title;
+  document.getElementById('confirm-msg').textContent=msg;
+  confirmCallback=cb;
+  document.getElementById('modal-confirm').classList.add('open');
+}
+function closeConfirm(){document.getElementById('modal-confirm').classList.remove('open');confirmCallback=null;}
+document.getElementById('confirm-ok-btn').addEventListener('click',()=>{closeConfirm();if(confirmCallback)confirmCallback();});
+
+function valAsso(){
+  if(document.getElementById('code-asso').value.trim()===S.mdpAsso){
+    closeModal('asso');
+    buildTabs('asso-tabs-zone','asso-content',false);
+    document.getElementById('asso-lock-bar').style.display=S.verrou?'flex':'none';
+    go('pg-asso');toast('✅ Connexion réussie !');
+  } else {document.getElementById('err-asso').style.display='block';document.getElementById('code-asso').value='';}
+}
+function valAdmin(){
+  if(document.getElementById('code-admin').value.trim()===S.mdpAdmin){
+    closeModal('admin');go('pg-admin');toast('✅ Accès administrateur accordé.');
+  } else {document.getElementById('err-admin').style.display='block';document.getElementById('code-admin').value='';}
+}
+function ouvrirPlanningAdmin(){buildTabs('admin-tabs-zone','admin-content',true);go('pg-admin-planning');}
+
+let currentCid='',currentIdx=0,currentIsAdmin=false;
+
+function buildTabs(zoneId,cid,isAdmin){
+  const zone=document.getElementById(zoneId);
+  let h='<span class="lbl">Mois</span>';
+  MOIS.forEach((m,i)=>h+=`<button class="tab${i===0?' active':''}" onclick="swTab('${zoneId}','${cid}',${i},this,${isAdmin})">${m}</button>`);
+  h+='<span class="sep"></span><span class="lbl">Activités</span>';
+  S.acts_list.forEach((a,i)=>{ const idx=MOIS.length+i; h+=`<button class="tab act-tab" onclick="swTab('${zoneId}','${cid}',${idx},this,${isAdmin})">${a}</button>`; });
+  h+=`<button class="tab-add-btn" onclick="openModal('new-act')">＋</button>`;
+  h+='<span class="sep"></span>';
+  const bi=MOIS.length+S.acts_list.length;
+  h+=`<button class="tab bilan-tab" onclick="swTab('${zoneId}','${cid}',${bi},this,${isAdmin})">📊 Bilan</button>`;
+  zone.innerHTML=`<div class="tabs-wrapper">
+    <button class="tab-arrow tab-arrow-left" onclick="scrollTabs('${zoneId}',-1)">‹</button>
+    <div class="tabs-bar" id="tabs-bar-${zoneId}">${h}</div>
+    <button class="tab-arrow tab-arrow-right" onclick="scrollTabs('${zoneId}',1)">›</button>
+  </div>`;
+  currentCid=cid;currentIsAdmin=isAdmin;currentIdx=0;
+  renderTab(cid,0,isAdmin);
+}
+function scrollTabs(zoneId,dir){const b=document.getElementById('tabs-bar-'+zoneId);if(b)b.scrollLeft+=dir*200;}
+function swTab(zoneId,cid,idx,btn,isAdmin){
+  const b=document.getElementById('tabs-bar-'+zoneId);
+  if(b) b.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  btn.classList.add('active');
+  currentCid=cid;currentIdx=idx;currentIsAdmin=isAdmin;
+  renderTab(cid,idx,isAdmin);
+}
+function renderTab(cid,idx,isAdmin){
+  if(idx<MOIS.length) renderMois(cid,MOIS[idx],isAdmin);
+  else if(idx<MOIS.length+S.acts_list.length) renderAct(cid,S.acts_list[idx-MOIS.length],isAdmin);
+  else renderBilanInline(cid,isAdmin);
+}
+
+function confirmerNouvelleAct(){
+  const nom=document.getElementById('new-act-name').value.trim();
+  const err=document.getElementById('err-new-act');
+  if(!nom||S.acts_list.includes(nom)){err.style.display='block';return;}
+  err.style.display='none';
+  S.acts_list.push(nom);
+  if(!S.act[nom]) S.act[nom]=[];
+  saveA();closeModal('new-act');
+  if(document.getElementById('pg-asso').classList.contains('active')) buildTabs('asso-tabs-zone','asso-content',false);
+  if(document.getElementById('pg-admin-planning').classList.contains('active')) buildTabs('admin-tabs-zone','admin-content',true);
+  toast('✅ Activité "'+nom+'" ajoutée !');
+}
+function supprimerAct(nom){
+  showConfirm('⚠️ Supprimer "'+nom+'"','Êtes-vous sûr ? Les données seront perdues.',()=>{
+    S.acts_list=S.acts_list.filter(a=>a!==nom);delete S.act[nom];saveA();
+    buildTabs(currentIsAdmin?'admin-tabs-zone':'asso-tabs-zone',currentCid,currentIsAdmin);
+    toast('🗑️ Onglet "'+nom+'" supprimé.');
+  });
+}
+
+function renderMois(cid,mois,isAdmin){
+  const d=S.mois[mois],lk=S.verrou&&!isAdmin,ro=lk?' ro':'';
+  let mbtn=isAdmin?`<div class="macro-btns">
+    <button class="mbtn mb-b" onclick="macroCreneaux()">🔄 Créneaux</button>
+    <button class="mbtn mb-g" onclick="macroHeures()">🕐 Heures</button>
+    <button class="mbtn mb-p" onclick="macroBilan()">📊 Bilan</button>
+  </div>`:'';
+  const semaines=[];let cur=null;
+  d.rows.forEach((r,ri)=>{
+    if(r.sem){cur={label:r.sem,rows:[]};semaines.push(cur);}
+    if(!cur){cur={label:'',rows:[]};semaines.push(cur);}
+    cur.rows.push({...r,ri});
+  });
+  semaines.forEach(s=>{while(s.rows.length<8)s.rows.push(null);});
+  const total=d.rows.reduce((s,r)=>s+(parseInt(r.dur)||0),0);
+  let rows='';
+  semaines.forEach((s,si)=>{
+    s.rows.forEach((r,li)=>{
+      const isF=li===0;
+      const weekRange = isF && s.label ? getWeekRange(mois, s.label) : '';
+      const sc=isF?`<td class="csem" rowspan="${s.rows.length}" title="${weekRange}" style="cursor:default;">
+        <div>${s.label}</div>
+        ${weekRange?`<div style="font-size:8px;color:rgba(100,180,255,.7);font-weight:400;white-space:nowrap;margin-top:2px;writing-mode:horizontal-tb;">${weekRange}</div>`:''}
+      </td>`:'';
+      if(!r){
+        rows+=`<tr class="sem-${si%2===0?'even':'odd'}${isF?' sc':''}">${sc}
+          <td><textarea class="ei${ro}" rows="1" onInput="autoGrow(this)"></textarea></td>
+          <td><textarea class="ei${ro}" rows="1" onInput="autoGrow(this)" style="min-width:200px"></textarea></td>
+          <td><span class="cdate" style="display:block;padding:5px 4px;color:rgba(255,255,255,.3);">—</span></td>
+          <td><input class="ei${lk?' ro':' admin-only'}" value="" style="min-width:50px;max-width:65px;font-size:10px;"></td>
+          <td><textarea class="ei${ro}" rows="1" onInput="autoGrow(this)" style="min-width:140px"></textarea></td>
+          <td><input class="ei${ro}" value="" style="min-width:70px"></td>
+          <td><input class="ei${ro}" value="" style="width:36px;text-align:center"></td>
+          <td><input class="ei${ro}" value="" style="width:36px;text-align:center"></td>
+          <td class="cdur" style="text-align:center;padding:5px;">0</td>
+        </tr>`;
+        return;
+      }
+      const ri2=r.ri;
+      rows+=`<tr class="sem-${si%2===0?'even':'odd'}${isF?' sc':''}">
+        ${sc}
+        <td><textarea class="ei${ro}" rows="1" onInput="autoGrow(this)"
+          onchange="upMField('${mois}',${ri2},'org',this.value);autoSync('${mois}',${ri2})"
+          style="min-width:80px">${x(r.org)}</textarea></td>
+        <td><textarea class="ei${ro}" rows="1" onInput="autoGrow(this)"
+          onchange="upMField('${mois}',${ri2},'manif',this.value);autoSync('${mois}',${ri2})"
+          style="min-width:200px">${x(r.manif)}</textarea></td>
+        <td class="cdate">${r.ddate||'—'}</td>
+        <td><input class="ei${isAdmin?'':' admin-only'}" value="${x(r.trait)}"
+          ${isAdmin?`onchange="upMField('${mois}',${ri2},'trait',this.value)"`:'readonly'}
+          style="min-width:70px;font-size:11px;"></td>
+        <td><textarea class="ei${ro}" rows="1" onInput="autoGrow(this)"
+          onchange="upMField('${mois}',${ri2},'rem',this.value);autoSync('${mois}',${ri2})"
+          style="min-width:140px">${x(r.rem)}</textarea></td>
+        <td><input class="ei${ro}" value="${x(r.clubs)}"
+          onchange="upMField('${mois}',${ri2},'clubs',this.value);autoSync('${mois}',${ri2})"
+          style="min-width:70px"></td>
+        <td><input class="ei${ro}" value="${x(r.deb)}"
+          onchange="upMField('${mois}',${ri2},'deb',this.value)"
+          style="width:36px;text-align:center"></td>
+        <td><input class="ei${ro}" value="${x(r.fin)}"
+          onchange="upMField('${mois}',${ri2},'fin',this.value)"
+          style="width:36px;text-align:center"></td>
+        <td class="cdur" id="dur-${mois}-${ri2}" style="text-align:center;padding:5px;">${r.dur||'0'}</td>
+      </tr>`;
+    });
+  });
+  document.getElementById(cid).innerHTML=`
+  <div class="mois-header">
+    <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+      <h2>${mois.toUpperCase()} <span class="an-badge">${d.an}</span></h2>
+      ${lk?'<span style="background:rgba(198,40,40,.2);color:#FC8181;padding:2px 10px;border-radius:50px;font-size:11px;font-weight:700;">🔒 Lecture seule</span>':''}
+    </div>${mbtn}
+  </div>
+  <div style="overflow:auto;flex:1;"><table class="tm">
+    <thead><tr>
+      <th style="width:34px">Sem.</th><th style="min-width:80px">Organisateur</th>
+      <th style="min-width:200px">Manifestation / Date / Lieux / Horaires</th>
+      <th style="width:72px">Date demande</th><th style="min-width:55px;max-width:68px;font-size:9px;line-height:1.3;">Traitement<br><span style="font-weight:400;opacity:.65;font-size:8px;">(réservé service sports)</span></th>
+      <th style="min-width:140px">Remarque</th><th style="min-width:70px">Clubs impactés</th>
+      <th style="width:40px">Début</th><th style="width:40px">Fin</th><th style="width:36px">Dur.</th>
+    </tr></thead>
+    <tbody>${rows}
+    <tr class="trow">
+      <td colspan="9" style="text-align:right;font-size:10px;color:rgba(255,255,255,.4);padding:7px 8px;">Total heures du mois :</td>
+      <td class="cdur" style="font-weight:800;color:#FFB300;font-size:13px;padding:7px;">${total}h</td>
+    </tr></tbody>
+  </table></div>`;
+  setTimeout(()=>document.querySelectorAll('#'+cid+' textarea.ei').forEach(autoGrow),10);
+}
+
+// Calcule les dates de début et fin d'une semaine dans un mois
+function getWeekRange(mois, semLabel){
+  const d = S.mois[mois];
+  const rows = d.rows;
+  const MOIS_ABREV={'Septembre':'sep','Octobre':'oct','Novembre':'nov',
+    'Décembre':'déc','Janvier':'jan','Février':'fév',
+    'Mars':'mar','Avril':'avr','Mai':'mai','Juin':'jun','Juillet':'jul','Aout':'aoû'};
+  const abrev = MOIS_ABREV[mois] || mois.substring(0,3).toLowerCase();
+  const semaines = [];
+  let i = 0;
+  while(i < rows.length){
+    const debut = rows[i];
+    let j = i;
+    while(j < rows.length && rows[j].jour !== 'dimanche') j++;
+    const fin = rows[Math.min(j, rows.length-1)];
+    semaines.push({ debut, fin });
+    i = j + 1;
+  }
+  const semIdx = parseInt(semLabel.replace('S','')) - 1;
+  const sem = semaines[semIdx];
+  if(!sem) return '';
+  const fj = sem.debut.jour.substring(0,3);
+  const lj = sem.fin.jour.substring(0,3);
+  if(sem.debut.num === sem.fin.num) return `${fj} ${sem.debut.num} ${abrev}`;
+  return `${fj} ${sem.debut.num} → ${lj} ${sem.fin.num} ${abrev}`;
+}
+function upMField(mois,ri,field,val){
+  if(!S.mois[mois].rows[ri]) return;
+  const r=S.mois[mois].rows[ri]; r[field]=val;
+  if(!r.ddate&&(field==='org'||field==='manif'||field==='rem'||field==='clubs')&&val.trim()){
+    r.ddate=todayStr();
+    const dateEl=document.querySelector(`#dur-${mois}-${ri}`)?.closest('tr')?.querySelector('.cdate');
+    if(dateEl) dateEl.textContent=r.ddate;
+  }
+  const champs=['org','manif','rem','clubs'];
+  if(champs.includes(field)){
+    const toutVide=champs.every(c=>!(r[c]||'').trim());
+    if(toutVide){
+      r.ddate='';
+      const dateEl=document.querySelector(`#dur-${mois}-${ri}`)?.closest('tr')?.querySelector('.cdate');
+      if(dateEl) dateEl.textContent='—';
+    }
+  }
+  if(field==='deb'||field==='fin'){
+    const dd=parseInt(r.deb),ff=parseInt(r.fin);
+    r.dur=(!isNaN(dd)&&!isNaN(ff)&&ff>dd)?String(ff-dd):'0';
+    const el=document.getElementById(`dur-${mois}-${ri}`);
+    if(el) el.textContent=r.dur;
+  }
+  saveM();
+}
+
+function autoSync(mois,ri){
+  const r=S.mois[mois].rows[ri]; if(!r) return;
+  const mi=MOIS.indexOf(mois);
+  S.acts_list.forEach(a=>{
+    const al=a.toLowerCase();
+    const isOrg=r.org&&r.org.toLowerCase().includes(al);
+    const idxOrg=S.act[a].findIndex(e=>e.mois===mois&&e.src_ri===ri&&e.type==='org');
+    if(isOrg){const en={mois,mois_idx:mi,src_ri:ri,type:'org',manif:r.manif||'',rem:r.rem||''};if(idxOrg>=0)S.act[a][idxOrg]=en;else S.act[a].push(en);}
+    else{if(idxOrg>=0)S.act[a].splice(idxOrg,1);}
+    const isImp=r.clubs&&r.clubs.toLowerCase().includes(al);
+    const idxImp=S.act[a].findIndex(e=>e.mois===mois&&e.src_ri===ri&&e.type==='impact');
+    if(isImp){const en={mois,mois_idx:mi,src_ri:ri,type:'impact',manif:r.manif||'',rem:r.rem||''};if(idxImp>=0)S.act[a][idxImp]=en;else S.act[a].push(en);}
+    else{if(idxImp>=0)S.act[a].splice(idxImp,1);}
+  });
+  saveA();
+}
+
+function syncAll(){
+  S.acts_list.forEach(a=>{S.act[a]=[];});
+  MOIS.forEach(mois=>{
+    S.mois[mois].rows.forEach((r,ri)=>{
+      if(!r) return; const mi=MOIS.indexOf(mois);
+      S.acts_list.forEach(a=>{
+        const al=a.toLowerCase();
+        if(r.org&&r.org.toLowerCase().includes(al)) S.act[a].push({mois,mois_idx:mi,src_ri:ri,type:'org',manif:r.manif||'',rem:r.rem||''});
+        if(r.clubs&&r.clubs.toLowerCase().includes(al)) S.act[a].push({mois,mois_idx:mi,src_ri:ri,type:'impact',manif:r.manif||'',rem:r.rem||''});
+      });
+    });
+  });
+  saveA();
+}
+
+function renderAct(cid,nom,isAdmin){
+  const entries=S.act[nom]||[],lk=S.verrou&&!isAdmin,ro=lk?' ro':'';
+  const orgByMois={},impByMois={};
+  MOIS.forEach((_,mi)=>{orgByMois[mi]=[];impByMois[mi]=[];});
+  entries.forEach(e=>{if(e.type==='org')orgByMois[e.mois_idx].push(e);if(e.type==='impact')impByMois[e.mois_idx].push(e);});
+  const nbOrg=entries.filter(e=>e.type==='org').length,nbImp=entries.filter(e=>e.type==='impact').length;
+  let tbody='';
+  MOIS.forEach((m,mi)=>{
+    const orgs=orgByMois[mi],imps=impByMois[mi],maxRows=Math.max(orgs.length,imps.length,1);
+    tbody+=`<tr class="mr"><td colspan="4" style="padding:6px 10px;font-size:10px;font-weight:700;text-transform:uppercase;">
+      ${m} ${S.mois[m].an}<span style="opacity:.5;font-weight:400;margin-left:8px;">${orgs.length} manif. · ${imps.length} impact(s)</span>
+    </td></tr>`;
+    for(let li=0;li<maxRows;li++){
+      const o=orgs[li]||null,p=imps[li]||null;
+      tbody+=`<tr>
+        <td style="border-right:2px solid rgba(30,136,229,.25);"><textarea class="aei${ro}" rows="1" onInput="autoGrow(this)"
+          onchange="upAEntry('${nom}','org',${mi},${li},this.value,'manif')" style="min-width:180px">${x(o?o.manif:'')}</textarea></td>
+        <td style="border-right:3px solid rgba(255,165,0,.4);"><textarea class="aei${ro}" rows="1" onInput="autoGrow(this)"
+          onchange="upAEntry('${nom}','org',${mi},${li},this.value,'rem')" style="min-width:120px">${x(o?o.rem:'')}</textarea></td>
+        <td style="border-right:2px solid rgba(255,107,0,.2);"><textarea class="aei${ro}" rows="1" onInput="autoGrow(this)"
+          onchange="upAEntry('${nom}','impact',${mi},${li},this.value,'manif')" style="min-width:180px">${x(p?p.manif:'')}</textarea></td>
+        <td><textarea class="aei${ro}" rows="1" onInput="autoGrow(this)"
+          onchange="upAEntry('${nom}','impact',${mi},${li},this.value,'rem')" style="min-width:120px">${x(p?p.rem:'')}</textarea></td>
+      </tr>`;
+    }
+  });
+  document.getElementById(cid).innerHTML=`
+  <div class="mois-header" style="background:#0D1F38;">
+    <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+      <h2>${nom}</h2><span style="font-size:11px;opacity:.55;">${nbOrg} manif. · ${nbImp} impact(s)</span>
+      ${lk?'<span style="background:rgba(198,40,40,.2);color:#FC8181;padding:2px 10px;border-radius:50px;font-size:11px;font-weight:700;">🔒 Lecture seule</span>':''}
+    </div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;">
+      ${isAdmin?`<button class="mbtn mb-b" onclick="syncAll();renderTab(currentCid,currentIdx,currentIsAdmin)">🔄 Recalculer</button>
+      <button class="mbtn mb-r" onclick="supprimerAct('${nom}')">🗑️ Supprimer</button>`:''}
+    </div>
+  </div>
+  <div style="overflow:auto;flex:1;"><table class="ta">
+    <thead>
+      <tr>
+        <th colspan="2" style="background:#0a2a5a;text-align:center;border-right:3px solid rgba(255,165,0,.5);">🏅 MANIFESTATIONS ORGANISÉES</th>
+        <th colspan="2" style="background:#3a1a00;text-align:center;">⚠️ IMPACTS POUR LE CLUB</th>
+      </tr>
+      <tr>
+        <th style="min-width:180px;border-right:2px solid rgba(30,136,229,.25);">Manifestation</th>
+        <th style="min-width:120px;border-right:3px solid rgba(255,165,0,.4);">Remarques</th>
+        <th style="min-width:180px;border-right:2px solid rgba(255,107,0,.2);">Impact pour le club</th>
+        <th style="min-width:120px;">Remarques impact</th>
+      </tr>
+    </thead>
+    <tbody>${tbody}
+    <tr class="tr-tot">
+      <td colspan="2" style="border-right:3px solid rgba(255,165,0,.4);">Total manifestations : ${nbOrg}</td>
+      <td colspan="2">Total impacts : ${nbImp}</td>
+    </tr></tbody>
+  </table></div>`;
+  setTimeout(()=>document.querySelectorAll('#'+cid+' textarea.aei').forEach(autoGrow),10);
+}
+
+function upAEntry(nom,type,mi,li,val,field){
+  const entries=S.act[nom].filter(e=>e.type===type&&e.mois_idx===mi);
+  if(entries[li]) entries[li][field]=val;
+  saveA();
+}
+
+function renderBilanInline(cid,isAdmin){
+  const an=S.annee;
+  const totH=Object.values(S.mois).reduce((s,m)=>s+m.rows.reduce((ss,r)=>ss+(parseInt(r.dur)||0),0),0);
+  let tbody='',totI=0,totO=0;
+  S.acts_list.forEach(a=>{
+    const st=calcStats(a);totI+=st.imp;totO+=st.org;
+    tbody+=`<tr><td><strong>${a}</strong></td><td class="nr">${st.org}</td><td class="nr">${st.imp}</td>
+    <td class="nr" style="color:#42A5F5">${st.org+st.imp}</td><td class="nr">${st.h}h</td>
+    <td style="font-size:11px;color:rgba(255,255,255,.4);font-style:italic">${NOTES[a]||''}</td></tr>`;
+  });
+  document.getElementById(cid).innerHTML=`
+  <div style="padding:10px 16px;background:#0D1F38;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+    <h2 style="font-family:'Bebas Neue',sans-serif;font-size:22px;">BILAN ${an}–${an+1}</h2>
+    ${isAdmin?`<div style="display:flex;gap:6px;">
+      <button class="mbtn mb-o" onclick="macroBilan()">📊 Bilan</button>
+      <button class="mbtn mb-b" onclick="macroCreneaux()">🔄 Créneaux</button>
+    </div>`:''}
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px;padding:12px 16px;background:#0A1628;">
+    <div style="background:#0D1F38;border-radius:8px;padding:12px;text-align:center;"><div style="font-size:22px;font-weight:700;color:#FFB300">${totH}h</div><div style="font-size:9px;color:rgba(255,255,255,.4);text-transform:uppercase;">Heures planif.</div></div>
+    <div style="background:#0D1F38;border-radius:8px;padding:12px;text-align:center;"><div style="font-size:22px;font-weight:700;color:#64B5F6">${totO+totI}</div><div style="font-size:9px;color:rgba(255,255,255,.4);text-transform:uppercase;">Total impacts</div></div>
+    <div style="background:#0D1F38;border-radius:8px;padding:12px;text-align:center;"><div style="font-size:22px;font-weight:700;color:#81C784">${S.acts_list.length}</div><div style="font-size:9px;color:rgba(255,255,255,.4);text-transform:uppercase;">Associations</div></div>
+  </div>
+  <div style="overflow:auto;flex:1;padding:0 16px 16px;">
+  <table class="ta" style="font-size:11.5px;">
+    <thead><tr><th>Association</th><th style="text-align:right">Organisation</th><th style="text-align:right">Clubs impactés</th><th style="text-align:right">Total</th><th style="text-align:right">Heures</th><th>Note</th></tr></thead>
+    <tbody>${tbody}</tbody>
+  </table></div>`;
+}
+
+function renderBilan(){
+  const an=S.annee;
+  document.getElementById('bilan-an').textContent=an+'–'+(an+1);
+  document.getElementById('bilan-titre').textContent=an+'–'+(an+1);
+  const totH=Object.values(S.mois).reduce((s,m)=>s+m.rows.reduce((ss,r)=>ss+(parseInt(r.dur)||0),0),0);
+  let tbody='',totI=0,totO=0;
+  S.acts_list.forEach(a=>{
+    const st=calcStats(a);totI+=st.imp;totO+=st.org;
+    tbody+=`<tr><td><strong>${a}</strong></td><td class="nr">${st.org}</td><td class="nr">${st.imp}</td><td class="nr">${st.org+st.imp}</td><td class="nr">${st.h}h</td><td class="notetd">${NOTES[a]||''}</td></tr>`;
+  });
+  document.getElementById('bilan-cards').innerHTML=`
+    <div class="bc"><div class="n">${totH}h</div><div class="l">Heures planifiées</div></div>
+    <div class="bc"><div class="n">${totO+totI}</div><div class="l">Total impacts</div></div>
+    <div class="bc"><div class="n">${S.acts_list.length}</div><div class="l">Associations</div></div>
+    <div class="bc"><div class="n">12</div><div class="l">Mois</div></div>`;
+  document.getElementById('bilan-tbody').innerHTML=tbody;
+}
+
+function calcStats(a){
+  let org=0,imp=0,h=0;
+  MOIS.forEach(m=>{S.mois[m].rows.forEach(r=>{
+    if(r.org&&r.org.toLowerCase().includes(a.toLowerCase())){org++;h+=parseInt(r.dur)||0;}
+    if(r.clubs&&r.clubs.toLowerCase().includes(a.toLowerCase())) imp++;
+  });});
+  return {org,imp,h};
+}
+
+function buildExtractionBtns(){
+  document.getElementById('extract-mois-btns').innerHTML=MOIS.map(m=>`<button class="ebtn" onclick="exportMois('${m}')">⬇️ ${m}</button>`).join('');
+  document.getElementById('extract-act-btns').innerHTML=S.acts_list.map(a=>`<button class="ebtn orange" onclick="exportAct('${a}')">⬇️ ${a}</button>`).join('');
+}
+function csvDownload(filename,rows){
+  const BOM='\uFEFF';
+  const csv=BOM+rows.map(r=>r.map(c=>'"'+(String(c||'').replace(/"/g,'""'))+'"').join(';')).join('\n');
+  const blob=new Blob([csv],{type:'text/csv;charset=utf-8;'});
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=filename;a.click();URL.revokeObjectURL(a.href);
+}
+function exportMois(mois){
+  const d=S.mois[mois];
+  const rows=[['Semaine','Organisateur','Manifestation','Date demande','Traitement','Remarque','Clubs impactés','Début','Fin','Durée']];
+  d.rows.forEach(r=>rows.push([r.sem,r.org,r.manif,r.ddate,r.trait,r.rem,r.clubs,r.deb,r.fin,r.dur]));
+  csvDownload(`Planning_${mois}_${d.an}.csv`,rows);toast(`⬇️ ${mois} téléchargé !`);
+}
+function exportAct(nom){
+  const orgs=[], imps=[];
+  MOIS.forEach(m=>{
+    (S.act[nom]||[]).filter(e=>e.mois===m&&e.type==='org'&&(e.manif||e.rem).trim())
+      .forEach(e=>orgs.push({mois:m, manif:e.manif||'', rem:e.rem||''}));
+    (S.act[nom]||[]).filter(e=>e.mois===m&&e.type==='impact'&&(e.manif||e.rem).trim())
+      .forEach(e=>imps.push({mois:m, manif:e.manif||'', rem:e.rem||''}));
+  });
+  const rows=[
+    ['Vos manifestations','','','Vos impacts','',''],
+    ['Mois','Manifestation','Remarque','Mois','Impact pour le club','Remarque']
+  ];
+  const maxLines = Math.max(orgs.length, imps.length);
+  for(let i=0; i<maxLines; i++){
+    const o = orgs[i]||null;
+    const p = imps[i]||null;
+    rows.push([
+      o?o.mois:'', o?o.manif:'', o?o.rem:'',
+      p?p.mois:'', p?p.manif:'', p?p.rem:''
+    ]);
+  }
+  csvDownload(`Planning_${nom}.csv`,rows);
+  toast(`⬇️ ${nom} téléchargé !`);
+}
+function exportBilan(){
+  const rows=[['Association','Organisation','Clubs impactés','Total','Heures']];
+  S.acts_list.forEach(a=>{const st=calcStats(a);rows.push([a,st.org,st.imp,st.org+st.imp,st.h+'h']);});
+  csvDownload(`Bilan_${S.annee}-${S.annee+1}.csv`,rows);toast('⬇️ Bilan téléchargé !');
+}
+
+function macroCreneaux(){syncAll();const n=S.acts_list.reduce((s,a)=>s+S.act[a].length,0);toast('🔄 '+n+' entrées synchronisées.');}
+function macroHeures(){let t=0;MOIS.forEach(m=>{t+=S.mois[m].rows.reduce((s,r)=>s+(parseInt(r.dur)||0),0);});toast('🕐 Total annuel : '+t+'h');}
+function macroBilan(){macroHeures();renderBilan();toast('📊 Bilan mis à jour.');}
+
+function majVerrou(){
+  const sb=document.getElementById('verrou-sb'),t=document.getElementById('verrou-txt');
+  if(S.verrou){sb.className='sb sb-lock';t.textContent='Verrouillé — associations en lecture seule.';}
+  else{sb.className='sb sb-open';t.textContent='Déverrouillé — modification autorisée.';}
+}
+function verrouiller(){S.verrou=true;saveS();majVerrou();toast('🔒 Planning verrouillé.');}
+function deverrouiller(){S.verrou=false;saveS();majVerrou();toast('🔓 Planning déverrouillé.');}
+
+function confirmReset(){
+  showConfirm('🗑️ Remettre à zéro','Êtes-vous sûr d\'effacer TOUTES les données ? Action irréversible.',()=>{
+    S.mois=JSON.parse(JSON.stringify(ODS));S.acts_list=[...ACTS_DEFAULT];initAct();saveToDB();
+    toast('🗑️ Données remises à zéro.');
+  });
+}
+
+function changerMdp(t){
+  const isA=t==='asso';
+  const n=document.getElementById(isA?'na1':'nadm1').value.trim();
+  const c=document.getElementById(isA?'na2':'nadm2').value.trim();
+  const msg=document.getElementById(isA?'msg-na':'msg-nadm');
+  msg.style.display='block';
+  if(!n){msg.style.color='#C62828';msg.textContent='Le code ne peut pas être vide.';return;}
+  if(n!==c){msg.style.color='#C62828';msg.textContent='Les deux codes ne correspondent pas.';return;}
+  if(isA)S.mdpAsso=n;else S.mdpAdmin=n;
+  saveS();msg.style.color='#2E7D32';msg.textContent='✅ Code mis à jour.';
+  document.getElementById(isA?'na1':'nadm1').value='';
+  document.getElementById(isA?'na2':'nadm2').value='';
+  toast('✅ Code '+(isA?'association':'administrateur')+' modifié.');
+}
+
+function majSaison(){const v=parseInt(document.getElementById('inp-an').value)||2026;document.getElementById('prev-saison').textContent=v+'–'+(v+1);}
+document.getElementById('inp-an').addEventListener('input',majSaison);
+function changerAnnee(){
+  const v=parseInt(document.getElementById('inp-an').value);
+  if(isNaN(v)||v<2020||v>2060){toast('❌ Année invalide.');return;}
+  S.annee=v;saveS();toast('✅ Saison mise à jour : '+v+'–'+(v+1));
+}
+
+function autoGrow(el){el.style.height='auto';el.style.height=el.scrollHeight+'px';}
+function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),3500);}
+function x(s){return(s||'').replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;');}
+
+majVerrou();
+initSupabase();
+</script>
+</body>
+</html>
